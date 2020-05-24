@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+
+.body {
+    background-color: ghostwhite;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.shareMenu {
+    margin-top: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+
+.label {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 400;
+    margin: 10px 0;
+    font-size: 32px;
+    margin-left: 10px;
+}
+
+.title {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0px;
+    margin-left: 10px;
+    margin-bottom: 2px;
+}
+
+.website_url {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin-top: -3px;
+    margin-left: 10px;
+}
+
+.button::-moz-focus-inner {
+    border: 0;
+}
+
+.shareMenu::-moz-focus-inner {
+    border: 0;
+}
+
+.hideMe {
+    color: red;
+    margin-left: 3px;
+}
