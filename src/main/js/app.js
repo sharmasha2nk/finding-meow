@@ -133,7 +133,7 @@ class ESRequest extends React.Component {
                     onCopy={() => { this.setState({copied: true}); var e=this; setTimeout(function(){ e.setState({copied: false}); }, 2000);}}>
                         <RiFileCopyLine size={30}/>
                 </CopyToClipboard>
-                <TwitterShareButton title="I challenge you to find meow! Here is my solution." hashtags={["cutest-cat-per-town", "elasticsearch", "challenge"]} url={this.state.url}>
+                <TwitterShareButton title="I challenge you to find meow! Here is my solution." hashtags={["cutest_cat_per_town", "findingmeow", "elasticsearch", "challenge"]} url={this.state.url}>
                     <TwitterIcon size={32} round={false} />
                 </TwitterShareButton>
                 <WhatsappShareButton title="I challenge you to find meow! #cutest-cat-per-town Here is my solution." url={this.state.url}>
