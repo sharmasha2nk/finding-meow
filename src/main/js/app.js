@@ -28,13 +28,11 @@ class App extends React.Component {
             const queryParam = authResult.get('query')
             if (queryParam) {
                 this.state.request = JSON.parse(atob(queryParam));
-                console.log(this.state.request);
             }
         } catch (err) {
             this.state.request = {}
         }
         this.handleSubmit(this.state.request);
-        this.render();
     }
 
     handleSubmit = (request) => {
@@ -82,13 +80,14 @@ class ESRequest extends React.Component {
     }
 
     handleChange(event) {
-        this.state.request = event.jsObject;
+        var request = event.jsObject;
         try {
             var url = window.location.origin;
-            url = url + "/?query=" + btoa(JSON.stringify(this.state.request));
-            console.log(url);
-            this.state.url = url;
-        } catch (err) {}
+            url = url + "/?query=" + btoa(JSON.stringify(request));
+            this.setState({request: request, url: url})
+        } catch (err) {
+            this.setState({request: request, url:""})
+        }
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -100,7 +99,6 @@ class ESRequest extends React.Component {
         try {
             var url = window.location.origin;
             url = url + "/?query=" + btoa(JSON.stringify(this.state.request));
-            console.log(url);
             this.state.url = url;
         } catch (err) {
         }
