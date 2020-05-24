@@ -72,7 +72,7 @@ class ESRequest extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            request: this.props.requestBody,
+            request: props.requestBody,
             copied: false,
             url: ""
         };
@@ -92,6 +92,12 @@ class ESRequest extends React.Component {
 
     shouldComponentUpdate(nextProps, nextState) {
         nextState.request = nextProps.requestBody;
+        try {
+            var url = window.location.origin;
+            url = url + "/?query=" + btoa(JSON.stringify(nextState.request));
+            nextState.url= url;
+        } catch (err) {
+        }
         return true;
     }
 
@@ -99,7 +105,7 @@ class ESRequest extends React.Component {
         try {
             var url = window.location.origin;
             url = url + "/?query=" + btoa(JSON.stringify(this.state.request));
-            this.state.url = url;
+            this.setState({url: url});
         } catch (err) {
         }
     }
