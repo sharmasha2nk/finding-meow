@@ -52,7 +52,7 @@ class App extends React.Component {
 	render() { 
 		return (
             <div>
-            <label className="label">Finding Meow 😺 - the cutest cat from each town using Elastic Search</label>
+            <label className="label">Finding Meow 😺 - the cutest cat from each town using Elasticsearch</label>
             <h3 className="website_url">Problem Statement & Solution: <a href="https://medium.com/@sharmasha2nk/finding-meow-the-cutest-cat-from-each-town-using-elastic-search-29a9417bc24d" target="_blank">#cutest-cat-per-town</a></h3>
             <div className="row">
                 <div className="column">
