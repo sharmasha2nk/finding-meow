@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class MyConfig implements WebMvcConfigurer {
 
     @Bean
-    @ConditionalOnExpression("#{systemProperties['MOESIF_APPLICATION_ID'] != null}")
+    @ConditionalOnExpression("#{systemEnvironment['MOESIF_APPLICATION_ID'] != null}")
     public Filter moesifFilter() {
         String moesifApplicationId = System.getenv().get("MOESIF_APPLICATION_ID");
         return new MoesifFilter(moesifApplicationId);
