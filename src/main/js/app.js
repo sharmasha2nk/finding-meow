@@ -36,7 +36,7 @@ class App extends React.Component {
     }
 
     handleSubmit = (request) => {
-        this.setState({ response: {"status": "Executing Query!"} })
+        this.setState({ response: {"status": "Executing Query!"}, request: request })
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -44,7 +44,7 @@ class App extends React.Component {
         };
         fetch('/search', requestOptions)
             .then(response => response.json())
-            .then(data => this.setState({ response: data }));
+            .then(data => this.setState({ response: data , request: request}));
     }
 
 	render() { 
@@ -91,12 +91,14 @@ class ESRequest extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        nextState.request = nextProps.requestBody;
-        try {
-            var url = window.location.origin;
-            url = url + "/?query=" + btoa(JSON.stringify(nextState.request));
-            nextState.url= url;
-        } catch (err) {
+        if (!nextState.init) {
+            nextState.request = nextProps.requestBody;
+            nextState.init = true;
+            try {
+                var url = window.location.origin;
+                url = url + "/?query=" + btoa(JSON.stringify(nextState.request));
+                nextState.url = url;
+            } catch (err) {}
         }
         return true;
     }
