@@ -1,0 +1,32 @@
+{
+    "name": "Spring Boot - React Sample",
+    "description": "A simple Spring Boot application with React",
+    "website": "https://finding-meow.herokuapp.com/",
+    "repository": "https://github.com/sharmasha2nk/finding-meow",
+    "logo": "https://miro.medium.com/max/1000/1*BCm4G2P3LrC4uZaqv7moFQ.jpeg",
+    "success_url": "/",
+    "keywords": [
+        "elasticsearch",
+        "spring-boot",
+        "npm",
+        "reactjs",
+        "bonsai",
+        "maven",
+        "react-json-editor-ajrm",
+        "react-share",
+        "react-copy-to-clipboard",
+        "react-icons"
+    ],
+    "addons": [
+        "bonsai",
+        "moesif"
+    ],
+    "buildpacks": [
+        {
+            "url": "heroku/nodejs"
+        },
+        {
+            "url": "heroku/java"
+        }
+    ]
+}

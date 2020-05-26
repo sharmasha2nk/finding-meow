@@ -1,5 +1,8 @@
 # finding-meow
-Finding Meow 😺 - the cutest cat from each town using Elastic Search
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+Finding Meow ??- the cutest cat from each town using Elastic Search
 
 For problem statement and solution visit [Medium article link](https://medium.com/@sharmasha2nk/finding-meow-the-cutest-cat-from-each-town-using-elastic-search-29a9417bc24d)
 
