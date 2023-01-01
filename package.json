@@ -6,6 +6,9 @@
     "type": "git",
     "url": ""
   },
+  "engines": {
+    "node": "16.x"
+  },
   "keywords": [
     "rest",
     "hateoas",
